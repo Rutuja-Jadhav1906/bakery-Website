@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>Razorpay Payment Page</h1>
+    <p>Thank you for your purchase, <%= name %>!</p>
+    <p>Order details:</p>
+    <ul>
+        <li>Name: <%= name %></li>
+        <li>Address: <%= address %></li>
+        <li>Mobile: <%= mobile %></li>
+        <li>Landmark: <%= landmark %></li>
+        <li>City: <%= city %></li>
+        <li>Pin: <%= pin %></li>
+        <li>State: <%= state %></li>
+        <li>Amount: <%= order.amount / 100 %> USD</li> <!-- Display amount in dollars -->
+    </ul>
+    <form method="POST" action="/payment/success">
+        <button class="btn btn-dark mt-3">Done</button>
+    </form>
+</body>

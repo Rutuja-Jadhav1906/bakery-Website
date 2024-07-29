@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <!-- <h3>Cake Details</h3> -->
+    <div class="card mb-3 card-info item-card" >
+        <div class="row g-0 offset-1">
+          <div class="col-md-6" style="border-radius: 2rem;">
+            <img src="<%= cake.image %>" class="img-fluid  show-img" alt="cake_image" >
+          </div>
+          <div class="col-md-3 ">
+            <div class="card-body card-detail">
+              <h4 class="card-title"><b><%= cake.name%></b></h4>
+              <h6 class="card-text"><b>Price:</b> &#8377; <%= cake.price%></h6>
+              <h6 class="card-text"><b>Serving Size:</b> <%= cake.serving_size_guide%></h6>
+              <h6 class="card-text"><b>Dimensions:</b> <%= cake.dimensions%></h6>
+              <h6 class="card-text"><b>Cake Size:</b> <%= cake.cake_size%></h6>
+              <h6 class="card-text"><b>Flavor:</b> <%= cake.cake_flavor%></h6>
+              <h6 class="card-text"><b>Weight:</b> <%= cake.weight%> kg</h6>
+              <h6 class="card-text"><b>Toppings:</b> <%= cake.toppings%></h6>
+              <h6 class="card-text"><b>Cake color:</b> <%= cake.cake_color%></h6>
+              <h6 class="card-text"><b>Piping color:</b> <%= cake.piping_color%></h6>
+              <h6 class="card-text"><b>Message color:</b> <%= cake.msg_color%></h6>
+              <h6 class="card-text"><b>Sell Count:</b> <%= num%></h6>
+              <form method="post" action="/cakes/<%= cake._id%>/addtocart">
+                <%- include("../includes/addtocart.ejs") %>
+              </form>
+              <!-- <h6 class="card-text"><small class="text-body-secondary">Last uh6dated 3 mins ago</small></h6> -->
+            </div>
+          </div>
+          <!-- <hr> -->
+          
+          
+          
+        </div>
+      </div>
+      <% if(currUser){%>
+        <div class="offset-1">
+          <h4>Tell Us About Your Expreience</h4>
+          <form action="/cakes/<%= cake._id%>/reviews" method="POST">
+            <!-- <div class="mb-3 mt-3">
+              <label for="rating" class="form-label">Rating</label>
+              <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range">
+            </div> -->
+            <div class="mb-3 mt-3">
+              <label for="rating" class="form-label">Rating</label>
+              <fieldset class="starability-basic">
+                
+                <!-- <legend>First rating:</legend> -->
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+              </fieldset>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="comment" class="form-label">Comments</label>
+              <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-outline-dark">Submit</button>
+          </form>
+        </div>
+      <%}%>
+      <h5 class="offset-1 mt-3"><b>Thanks Alot</b></h5>
+          <div class="offset-1">
+            <% for(review of cake.review){%>
+              <div class="card col-4 mb-3" style="padding: 10px;">
+                <div class="card-body">
+                  <h5 class="card-title">@<%= review.author.username%></h5>
+                  <p class="card-text"><%= review.comment%></p>
+                  <p class="starability-result card-text" data-rating="<%= review.rating%>"></p>
+                </div>
+                <form class="mt-2" method="POST" action="/cakes/<%=cake._id%>/reviews/<%=review._id%>?_method=DELETE">
+                  <button class="btn  btn-sm btn-dark">Delete</button>
+                </form>
+              </div>
+            <%}%>
+          </div>
+</body>

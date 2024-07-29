@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+<body>
+  <!-- <h3>All Cakes</h3> -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 cards-body">
+    <% for(let croissant of allCroissants){%>
+    <a href="/croissants/<%=croissant._id %>" class="cards-link">
+      <div class="card col item-card">
+        <img
+          src="<%= croissant.image %>"
+          class="card-img-top"
+          alt="croissant_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b><%= croissant.name %></b><br />&#8377; <%= croissant.price%>
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</body>

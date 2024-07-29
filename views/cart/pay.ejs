@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Payment</title>
+</head>
+<body>
+    <h2>Welcome to pay</h2>
+    <form action="payment" method="POST">
+        <script src="//checkout.stripe.com/v2/checkout.js"
+        class="stripe-button"
+        data-key="<%= key %>"
+        data-amount="<%= amount *100 %>"
+        data-currency="usd"
+        data-name="Rutuja"
+        data-description="Buy our products"
+        data-locale="auto">
+        </script>
+    </form>
+    <h5><%= amount %></h5>
+</body>
+</html>

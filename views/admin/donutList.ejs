@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<div
+  class="admin-item-page row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3 cards-body"
+>
+  <% for(let donut of allDonuts) { %>
+
+  <div class="card col item-card mb-3 no-overlay">
+    <img
+      src="<%= donut.image %>"
+      class="card-img-top"
+      alt="cake_image"
+      style="height: 25rem"
+    />
+    <div class="card-img-overlay">
+      <div class="abtns">
+        <a
+          class="btn btn-dark card-btn"
+          style="border: none"
+          href="/donuts/<%= donut._id%>/edit"
+          >Edit</a
+        >
+
+        <form action="/donuts/<%=donut._id%>?_method=DELETE" method="post">
+          <button class="btn btn-dark card-btn">Delete</button>
+        </form>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text cake-name">
+        <b><%= donut.name %></b><br />&#8377; <%= donut.price %>
+      </p>
+    </div>
+  </div>
+  <% } %>
+</div>

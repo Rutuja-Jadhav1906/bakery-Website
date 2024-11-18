@@ -17,6 +17,7 @@ const macaronRouter = require("./routes/macarons.js");
 const breadRouter = require("./routes/breads.js");
 const donutRouter = require("./routes/donuts.js");
 const cartRouter = require("./routes/cart.js");
+const adminRouter = require("./routes/admin.js");
 const { isLoggedIn } = require("./middleware.js");
 const Razorpay = require("razorpay");
 const RAZORPAY_ID_KEY = "rzp_test_FW207lC8d9Vjrh";
@@ -106,6 +107,10 @@ app.use("/cart", cartRouter);
 
 app.use("/", userRouter);
 
+// ADMIN
+
+app.use("/", adminRouter);
+
 // ORDER
 
 app.post("/placeorder", isLoggedIn, async (req, res) => {
@@ -132,7 +137,7 @@ app.get("/nav", (req, res) => {
 
 app.get("/home", async (req, res) => {
   // console.log(req.user);
-  res.render("home.ejs");
+  res.render("home2.ejs");
 });
 
 app.post("/payment", (req, res) => {

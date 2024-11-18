@@ -1,0 +1,113 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<body class="admin-dashboard">
+  <div class="container">
+    <form action="/form">
+      <button class="btn btn-dark card-btn col">Add Item</button>
+    </form>
+  </div>
+
+  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3 cards-body">
+    <a href="/cakelist" class="cards-link">
+      <div class="card col item-card cakes-card">
+        <img
+          src="https://i.pinimg.com/564x/bb/7e/15/bb7e15a2f55b6857fe94cd8ff4afaaee.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Cakes</b>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/cookielist" class="cards-link">
+      <div class="card col item-card cookie-card">
+        <img
+          src="https://i.pinimg.com/236x/8a/bb/dc/8abbdc650c3cd73d662497e4af11f70f.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Cookies</b>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/croissantlist" class="cards-link">
+      <div class="card col item-card croissant-card">
+        <img
+          src="https://i.pinimg.com/236x/e0/6b/a8/e06ba8c8b8fd2123b856a3a843fa03ef.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Croissants</b>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/donutlist" class="cards-link">
+      <div class="card col item-card donut-card">
+        <img
+          src="https://i.pinimg.com/236x/a3/38/90/a338902414641524c0899708b162f285.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Donuts</b>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/macaronlist" class="cards-link">
+      <div class="card col item-card macaron-card">
+        <img
+          src="https://i.pinimg.com/236x/c0/b4/2e/c0b42e7022e197b301f12277923ad1de.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Macarons</b>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/breadlist" class="cards-link">
+      <div class="card col item-card bread-card">
+        <img
+          src="https://i.pinimg.com/236x/62/c2/1c/62c21c51a9459185af2496efdb468b99.jpg"
+          class="card-img-top"
+          alt="cake_image"
+          style="height: 25rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text cake-name">
+            <b>Breads</b>
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>

@@ -1,26 +1,18 @@
 <% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
 <body>
-  <!-- <h3>All Cakes</h3> -->
-  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 cards-body">
+  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3 cards-body">
     <% for(let cake of allCakes){%>
     <a href="/cakes/<%=cake._id %>" class="cards-link">
       <div class="card col item-card">
-        <img
-          src="<%= cake.image %>"
-          class="card-img-top"
-          alt="cake_image"
-          style="height: 25rem"
-        />
-        <div class="card-img-overlay"></div>
-        <div class="card-body">
-          <p class="card-text cake-name">
-            <b><%= cake.name %></b><br />&#8377; <%= cake.price%>
-          </p>
+        <div class="card-image-wrapper">
+          <img src="<%= cake.image %>" class="card-img-top" alt="cake_image" />
+          <div class="card-overlay">
+            <h5 class="overlay-text"><%= cake.name %></h5>
+            <p class="overlay-price">&#8377; <%= cake.price %></p>
+          </div>
         </div>
       </div>
     </a>
     <% } %>
   </div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
 </body>
-<!-- </html> -->

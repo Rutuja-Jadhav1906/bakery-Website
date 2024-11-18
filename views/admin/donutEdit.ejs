@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Add new item</h3>
+    <!-- Form starts here -->
+    <form
+      method="POST"
+      action="/donuts/<%= donut._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="name"
+          value="<%=donut.name%>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="price"
+            value="<%= donut.price%>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="image"
+          value="<%=donut.image%>"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div id="donutFields">
+        <div class="mb-3">
+          <label for="donut_toppings" class="form-label">Toppings</label>
+          <input
+            name="donut_toppings"
+            value="<%=donut.topping%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="donut_flavour" class="form-label">Flavour</label>
+          <input
+            name="donut_flavour"
+            value="<%=donut.flavor%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="donut_filling" class="form-label">Filling</label>
+          <input
+            name="donut_filling"
+            value="<%=donut.filling%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <button class="btn btn-dark">Edit</button>
+    </form>
+  </div>
+</div>

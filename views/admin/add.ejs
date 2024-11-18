@@ -1,0 +1,281 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Add new item</h3>
+    <!-- Form starts here -->
+    <form method="POST" action="/add" novalidate class="needs-validation">
+      <label for="type">Select Item Type:</label>
+      <select id="type" name="type" onchange="showFields(this.value)">
+        <option value="">--Select--</option>
+        <option value="cake">Cake</option>
+        <option value="cookie">Cookie</option>
+        <option value="croissant">Croissant</option>
+        <option value="donut">Donut</option>
+        <option value="macaron">Macaron</option>
+        <option value="bread">Bread</option>
+      </select>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="name"
+          placeholder="Add a catchy title"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="price"
+            placeholder="1200"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="image"
+          placeholder="Enter image URL/Link"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <!-- Cake-specific fields -->
+      <div id="cakeFields" style="display: none">
+        <div class="mb-3">
+          <label for="cake_color" class="form-label">Cake Color</label>
+          <input
+            name="cake_color"
+            placeholder="Enter color"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="serving_size_guide" class="form-label"
+            >Serving Size Guide</label
+          >
+          <input
+            name="serving_size_guide"
+            placeholder="Enter serving size guide"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="dimensions" class="form-label">Dimensions</label>
+          <input
+            name="dimensions"
+            placeholder="Enter dimensions"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cake_size" class="form-label">Cake Size</label>
+          <input
+            name="cake_size"
+            placeholder="Enter cake size"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cake_flavor" class="form-label">Cake Flavour</label>
+          <input
+            name="cake_flavor"
+            placeholder="Enter cake flavour"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="weight" class="form-label">Weight</label>
+          <input name="weight" placeholder="1" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="cake_toppings" class="form-label">Toppings</label>
+          <input
+            name="cake_toppings"
+            placeholder="Enter toppings"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="piping_color" class="form-label">Piping Color</label>
+          <input
+            name="piping_color"
+            placeholder="Enter piping color"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="msg_color" class="form-label">Message Color</label>
+          <input
+            name="msg_color"
+            placeholder="Enter message color"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Bread-specific fields -->
+      <div id="breadFields" style="display: none">
+        <div class="mb-3">
+          <label for="slice_count" class="form-label">Slice Count</label>
+          <input
+            name="slice_count"
+            placeholder="Enter slice count"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Croissant-specific fields -->
+      <div id="croissantFields" style="display: none">
+        <div class="mb-3">
+          <label for="croissant_filling" class="form-label">Filling</label>
+          <input
+            name="croissant_filling"
+            placeholder="Enter filling"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="croissant_toppings" class="form-label">Toppings</label>
+          <input
+            name="croissant_toppings"
+            placeholder="Enter toppings"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input
+            name="quantity"
+            placeholder="Enter quantity"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Donut-specific fields -->
+      <div id="donutFields" style="display: none">
+        <div class="mb-3">
+          <label for="donut_toppings" class="form-label">Toppings</label>
+          <input
+            name="donut_toppings"
+            placeholder="Enter toppings"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="donut_flavour" class="form-label">Flavour</label>
+          <input
+            name="donut_flavour"
+            placeholder="Enter flavour"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="donut_filling" class="form-label">Filling</label>
+          <input
+            name="donut_filling"
+            placeholder="Enter filling"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Macaron-specific fields -->
+      <div id="macaronFields" style="display: none">
+        <div class="mb-3">
+          <label for="macaron_flavour" class="form-label">Flavour</label>
+          <input
+            name="macaron_flavour"
+            placeholder="Enter flavour"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="macaron_filling" class="form-label">Filling</label>
+          <input
+            name="macaron_filling"
+            placeholder="Enter filling"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <button class="btn btn-dark add-btn mt-3">Add</button>
+    </form>
+  </div>
+</div>
+
+<!-- <script>
+    function showFields(type) {
+      // Hide all dynamic fields
+      document.getElementById("cakeFields").style.display = "none";
+      document.getElementById("breadFields").style.display = "none";
+      document.getElementById("cookieFields").style.display = "none";
+      document.getElementById("donutFields").style.display = "none";
+      document.getElementById("croissantsFields").style.display = "none";
+      document.getElementById("macaronFields").style.display = "none";
+  
+      // Show relevant fields based on the selected type
+      if (type === "cake") document.getElementById("cakeFields").style.display = "block";
+      if (type === "cookie") document.getElementById("cookieFields").style.display = "block";
+      if (type === "bread") document.getElementById("breadFields").style.display = "block";
+      if (type === "croissant") document.getElementById("croissantFields").style.display = "block";
+      if (type === "donut") document.getElementById("donutFields").style.display = "block";
+      if (type === "macaron") document.getElementById("macaronFields").style.display = "block";
+    }
+  </script> -->
+
+<script>
+  function showFields(type) {
+    // List all field IDs
+    const fieldIds = [
+      "cakeFields",
+      "breadFields",
+      "cookieFields",
+      "croissantFields",
+      "donutFields",
+      "macaronFields",
+    ];
+
+    // Hide all dynamic fields
+    fieldIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) element.style.display = "none";
+    });
+
+    // Show relevant fields based on the selected type
+    const selectedField = document.getElementById(type + "Fields");
+    if (selectedField) {
+      selectedField.style.display = "block";
+    }
+  }
+</script>

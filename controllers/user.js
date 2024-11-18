@@ -12,8 +12,13 @@ module.exports.signUp = async (req, res) => {
     const newUser = new User({ email, username });
     const registeredUser = await User.register(newUser, password);
     console.log(registeredUser);
-    req.flash("success", "Welocome");
-    res.redirect("/home");
+    req.login(registeredUser, (err) => {
+      if (err) {
+        return next(err);
+      }
+      req.flash("success", "Welocome");
+      res.redirect("/home");
+    });
   } catch (e) {
     req.flash("error", e.message);
     res.redirect("/signup");

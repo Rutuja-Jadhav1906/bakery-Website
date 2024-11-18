@@ -4,65 +4,29 @@
     <div class="cart-page">
         <div class="cards-body mt-3 " >
             <% for(let order of allOrders){%>
-                <!-- <div class="order">
-                    <div class="card col mb-0 item-card">
-                        <img src="<%= order.image %>" class="card-img-top" alt="cake_image" style="height: 20rem;">
-                        <div class="card-img-overlay"></div>
-                        <div class="card-body">
-                            <p class="card-text cake-name"><b><%= order.name %></b><br>&dollar; <%= order.price%></p>
-                        </div>
-                    </div>
-                    <div class="btns">
-                        <form>
-                            <button class="btn btn-dark cart-btn">Place Order</button>
-                        </form>
-                        <form method="post" action="/cart/<%= order._id%>?_method=DELETE">
-                            <button class="btn btn-dark del-btn">Remove from cart</button>
-                        </form>
-                    </div>
-                </div> -->
                 <div class="order">
                     <div class="card mb-3 cart-card" style="max-width: 800px; padding: 10px; border-radius: 1rem;">
                         <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<%= order.image %>" class="img-fluid" alt="" style="border-radius: 1rem; height: 250px; width: 250px;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="margin-left: 30px; margin-top: 20px;">
-                                <h5 class="card-title"><%=order.name%></h5>
-                                <p class="card-text"><%= order.price%></p>
-                                <form method="post" action="/cart/<%= order._id%>?_method=DELETE">
-                                    <button class="btn btn-dark del-btn">Remove from cart</button>
-                                </form>
-                            <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+                            <div class="col-md-4">
+                                <img src="<%= order.image %>" class="img-fluid" alt="" style="border-radius: 1rem; height: 250px; width: 250px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body" style="margin-left: 30px; margin-top: 20px;">
+                                    <h5 class="card-title"><%=order.name%></h5>
+                                    <p class="card-text"><%= order.price%></p>
+                                    <form method="post" action="/cart/<%= order._id%>?_method=DELETE">
+                                        <button class="btn btn-dark del-btn">Remove from cart</button>
+                                    </form>
+                                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
                 </div>
-                <!-- <a href="/cart/<%=order._id %>" class="cards-link">
-                    
-                </a>  -->
             <% } %>
         </div>
         <div class="allItems mt-3" style="width: 400px;">
-            
-            <!-- <ul style="border: 1px solid black; padding: 10px; border-radius: 1rem;">
-                <h4><b>Your Orders</b></h4>
-                <% for(let order of allOrders){%>
-                    <div class="order-body" >
-                        <div class="order-name mr-3"><h5><%= order.name%></h5></div>
-                        <div class="order-quantity"><input type="number" style="width: 20px;"></div>
-                        <div class="order-price"><h5>&dollar; <%= order.price%></h5></div>
-                        
-                    </div>
-                <%}%>
-                
-                <form>
-                    <button class="btn btn-dark">Place Order</button>
-                </form>
-            </ul> -->
             <table cellspacing="10" border="1px solid black" cellpadding="10">
                 <tr>
                     <th><b>Item Name</b></th>
@@ -93,6 +57,8 @@
                     
         </div>
     </div>
+    </body>
+
 
     <script>
         // Add event listener to quantity inputs

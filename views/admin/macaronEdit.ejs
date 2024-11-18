@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Add new item</h3>
+    <!-- Form starts here -->
+    <form
+      method="POST"
+      action="/macarons/<%= macaron._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="name"
+          value="<%=macaron.name%>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="price"
+            value="<%= macaron.price%>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="image"
+          value="<%=macaron.image%>"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div id="macaronFields">
+        <div class="mb-3">
+          <label for="macaron_flavour" class="form-label">Flavour</label>
+          <input
+            name="macaron_flavour"
+            value="<%=macaron.flavor%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="macaron_filling" class="form-label">Filling</label>
+          <input
+            name="macaron_filling"
+            value="<%=macaron.filling%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <button class="btn btn-dark">Edit</button>
+    </form>
+  </div>
+</div>

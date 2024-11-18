@@ -1,0 +1,132 @@
+<% layout("/layouts/boilerplate") %> <%- include("../includes/flash.ejs") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Add new item</h3>
+    <!-- Form starts here -->
+    <form
+      method="POST"
+      action="/cakes/<%= cake._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="name"
+          value="<%=cake.name%>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="price"
+            value="<%=cake.price%>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="image"
+          value="<%= cake.image%>"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <!-- Cake-specific fields -->
+      <div id="cakeFields">
+        <div class="mb-3">
+          <label for="cake_color" class="form-label">Cake Color</label>
+          <input
+            name="cake_color"
+            value="<%=cake.cake_color%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="serving_size_guide" class="form-label"
+            >Serving Size Guide</label
+          >
+          <input
+            name="serving_size_guide"
+            value="<%=cake.serving_size_guide%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="dimensions" class="form-label">Dimensions</label>
+          <input
+            name="dimensions"
+            value="<%=cake.dimensions%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cake_size" class="form-label">Cake Size</label>
+          <input
+            name="cake_size"
+            value="<%= cake.cake_size%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cake_flavor" class="form-label">Cake Flavour</label>
+          <input
+            name="cake_flavor"
+            value="<%= cake.cake_flavor%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="weight" class="form-label">Weight</label>
+          <input name="weight" value="<%=cake.weight%>" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="cake_toppings" class="form-label">Toppings</label>
+          <input
+            name="cake_toppings"
+            value="<%=cake.toppings%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="piping_color" class="form-label">Piping Color</label>
+          <input
+            name="piping_color"
+            value="<%= cake.piping_color%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="msg_color" class="form-label">Message Color</label>
+          <input
+            name="msg_color"
+            value="<%=cake.msg_color%>"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <button class="btn btn-dark">Edit</button>
+    </form>
+  </div>
+</div>

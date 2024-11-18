@@ -1,20 +1,15 @@
 * {
-  /* font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: normal; */
-  font-family: "Playfair Display SC", serif;
-  font-weight: 400;
   font-style: normal;
-  /* padding: 0;
-  margin: 0; */
 }
 
 /* NAVBAR */
 
 .navbar {
   height: 4rem;
-  background-color: rgb(245, 231, 191);
+  background-color: #fce4ec;
 }
 
 .navbar-brand {
@@ -40,224 +35,680 @@
 
 /* cards */
 
-.item-card {
-  border: none !important;
-  /* margin-bottom: 2rem !important; */
-}
-
-.card-img-top {
-  border-radius: 1rem !important;
-  width: 100% !important;
-  object-fit: cover !important;
-}
-
-.card-body {
-  padding: 0 !important;
+.cards-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .cards-link {
   text-decoration: none;
-  margin-bottom: 20px;
+  color: inherit;
+  transition: transform 0.3s;
 }
 
-.cards-body {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
+.cards-link:hover {
+  transform: scale(1.05);
 }
 
-/* Card effect */
+.item-card {
+  position: relative;
+  border: none !important;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
 
-.card-img-overlay {
+.item-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: 10px;
 }
 
-.card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: white;
+.card-image-wrapper:hover .card-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-price {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cake-name {
+  font-size: 1rem;
+  color: #333;
 }
 
 /* show card details */
 
 .card-info {
-  /* border: 1px solid black !important; */
-  margin-top: 2rem;
-  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.card-info .row {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .show-img {
-  height: 500px !important;
-  width: 500px !important;
-  border-radius: 2rem !important;
-  /* border-top-left-radius: 2rem !important; */
+  border-radius: 1rem;
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card-info h6 {
-  margin-top: 0.5rem !important;
+.show-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.col-md-3 {
+  flex: 0 0 45%;
+  padding: 1.5rem;
 }
 
 .card-detail {
-  display: flex !important;
-  flex-direction: column;
-  /* border: 1px solid black; */
-  margin-top: 2rem;
-}
-
-.card-btn {
-  margin-top: 1rem !important;
-  /* width: 0.5rem !important; */
-}
-
-.btns {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
+  gap: 0.8rem;
+}
+
+.card-detail h4 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-detail h6 {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.card-detail h6 b {
+  color: #222;
+}
+
+.item-card form button {
+  padding: 0.8rem 2rem;
+  background-color: #f9a4c2;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.item-card form button:hover {
+  background-color: #f9a4c2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .card-info {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .col-md-6,
+  .col-md-3 {
+    flex: 0 0 100%;
+    padding: 1rem;
+  }
+  .show-img {
+    max-height: 15rem;
+  }
+  .card-detail {
+    text-align: center;
+  }
+}
+
+/* CAKE CARD */
+
+.cake-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 350px;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cake-card .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cake-card .img-fluid:hover {
+  transform: scale(1.05);
+}
+
+.cake-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cake-card .card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.cake-card .card-text {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.cake-card .card-text b {
+  color: #555;
+}
+
+.cake-card .card-text:last-child {
+  margin-bottom: 1rem;
+}
+
+.cake-card form {
+  margin-top: 1rem;
+}
+
+.cake-card form button {
+  padding: 0.8rem 2rem;
+  background-color: #f9a4c2;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cake-card form button:hover {
+  background-color: #f9a4c2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .cake-card {
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cake-card .img-fluid {
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .cake-card .card-body {
+    text-align: center;
+  }
+
+  .cake-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cake-card .card-text {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .cake-card form button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
 }
 
 /* CART */
 
-.cart {
-  font-size: 1.3rem;
-  margin-right: 1rem;
-}
-
 .cart-page {
   display: flex;
-  /* justify-content: space-evenly; */
-  /* justify-content: center; */
-  justify-content: space-around;
-  /* border: 1px solid black; */
-}
-
-.order-body {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cart-link {
-  text-decoration: none;
-  color: black;
-}
-
-.cart-btn {
-  margin-top: none !important;
-}
-
-.order {
-  display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  /* border: 1px solid black; */
-}
-
-.del-btn {
-  margin-top: 0.2rem;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
 }
 
 .cart-card {
-  display: flex !important;
-  justify-content: center !important;
-  /* align-items: center !important; */
-}
-
-/* SLIDER */
-
-.carousel-inner img {
-  height: 600px !important;
-  background-size: cover !important;
-  background-position: center center;
-  background-repeat: no-repeat;
-  /* resize: both; */
-  width: 100% !important;
-}
-/* .c-cap h3{
-    font-weight: 700;
-    font-size: 3rem;
-} */
-
-.c-item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding: 1rem;
 }
 
-/* .card-body{
-    height: 150px !important;
-} */
+.cart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cart-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+
+.cart-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 180px);
+}
+
+.cart-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.cart-card .card-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.cart-card form {
+  margin-top: 0.8rem;
+}
+
+.cart-card form button {
+  padding: 0.5rem 1.2rem;
+  background-color: #f8bbd0;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-card form button:hover {
+  background-color: #f89cbc;
+  transform: scale(1.05);
+}
+
+.allItems table {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.allItems table th,
+.allItems table td {
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.allItems table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  color: #333;
+}
+
+.allItems table td {
+  background-color: #fff;
+  color: #555;
+}
+
+.quantityInput {
+  width: 40px;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+.order-total input {
+  width: 100px;
+  padding: 0.4rem;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.order-total button {
+  background-color: #f8bbd0;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-total button:hover {
+  background-color: #f89cbc;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .cart-page {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .cart-card {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .cart-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cart-card .card-body {
+    width: 100%;
+    text-align: center;
+  }
+
+  .allItems table {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+
+  .order-total {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-total button {
+    padding: 0.7rem 2rem;
+  }
+}
 
 /* HOME */
 
-.home-body {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
+.hero-section {
+  background: url("https://i.pinimg.com/736x/f0/86/2d/f0862de83f56ef1369f9a8a975a8423c.jpg")
+    no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-/* .cap{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
-.cap h3{
-    font-weight: 700 ;
-    /* font-size: 1.5rem; 
+.hero-section p {
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
-.home-card-link{
-    text-decoration: none;
-    color: black;
-} */
+.hero-btn {
+  background-color: #f36697;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
 
-.menu-cake-body {
-  height: 500px;
-  width: 100%;
-  /* border: 1px solid black; */
+.hero-btn:hover {
+  background-color: #f89cbc;
+}
+
+/* About Section */
+.about-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fdecf2;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Products Section */
+.products-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.products-section h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.product-slider {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.menu-info {
-  height: 500px;
-  width: 700px;
-  margin-right: 10px;
-  /* border: 1px solid black; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
+.product-item {
+  width: 250px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  /* align-items: center; */
+  transition: transform 0.3s ease-in-out;
 }
 
-.menu-cake-img {
-  height: 400px;
-  width: 500px;
-  margin-left: 10px;
-  /* border: 1px solid black; */
-  background-color: rgb(245, 231, 191);
-  /* background-image: url("https://th.bing.com/th/id/OIG2.H1r_9koqcQtzWOf7z9N.?w=270&h=270&c=6&r=0&o=5&dpr=1.3&pid=ImgGn"); */
-  /* background-repeat: no-repeat;
-    background-size: 500px 400px;
-    background-position: right bottom; */
+.product-item:hover {
+  transform: scale(1.05);
 }
 
-.menu-cake-img img {
-  height: 400px;
-  width: 500px;
-  margin-top: 50px;
-  margin-left: 60px;
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* .menu-cake img{
-    height: 400px;
-    width: 500px;
-    object-fit: none;
-    /* background-repeat: no-repeat;
-    background-size: 500px 400px;
-    background-position: right bottom; 
-} */
+.product-item h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
 
-.cake-image {
-  object-position: right bottom;
+.product-item .view-btn {
+  display: inline-block;
+  background-color: #f36697;
+  padding: 8px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.product-item .view-btn:hover {
+  background-color: #f89cbc;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #fdf9f3;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.testimonials blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.testimonials footer {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Call to Action Section */
+.cta-section {
+  text-align: center;
+  background-color: #f36697;
+  padding: 60px 20px;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #fff;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  color: #f36697;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  background-color: #f89cbc;
 }
 
 /* FOOTER */
@@ -289,10 +740,18 @@
   text-align: center;
   display: flex;
   height: 8rem;
-  background-color: rgb(245, 231, 191);
+  background-color: #fce4ec;
   flex-wrap: wrap;
   justify-content: center;
   align-items: space-evenly;
+}
+
+footer {
+  /* position: sticky; */
+  bottom: 0;
+  background-color: #fce4ec;
+  text-align: center;
+  width: 100%;
 }
 
 /* Delivery */
@@ -300,4 +759,228 @@
 .delivery {
   display: flex;
   justify-content: space-around;
+}
+
+/* admin */
+
+/* Target only cards within the admin dashboard */
+.admin-dashboard .cards-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Style for each card */
+.admin-dashboard .card {
+  position: relative;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px; /* Set max width for the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.admin-dashboard .card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Ensures the image fits the card without distorting */
+  transition: transform 0.3s ease;
+}
+
+/* On hover, apply scale transformation for a zoom-in effect */
+.admin-dashboard .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.admin-dashboard .card-body {
+  padding: 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Card text styling */
+.admin-dashboard .card-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on the card text */
+.admin-dashboard .card:hover .card-text {
+  color: #f8bbd0; /* Highlight color */
+}
+
+/* Add some hover effects for the card itself */
+.admin-dashboard .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific card styles for each category (Cakes, Cookies, etc.) */
+.admin-dashboard .cakes-card {
+  background-color: #f8f8f8;
+  border: 1px solid #e2e2e2;
+}
+
+.admin-dashboard .cookie-card {
+  background-color: #fff8e1;
+  border: 1px solid #ffd54f;
+}
+
+.admin-dashboard .croissant-card {
+  background-color: #fff3e0;
+  border: 1px solid #ffcc80;
+}
+
+.admin-dashboard .donut-card {
+  background-color: #fce4ec;
+  border: 1px solid #f8bbd0;
+}
+
+.admin-dashboard .macaron-card {
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+}
+
+.admin-dashboard .bread-card {
+  background-color: #fffde7;
+  border: 1px solid #fff59d;
+}
+
+.admin-dashboard .container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-dashboard .card-btn {
+  padding: 1.2rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  text-align: center;
+  background-color: #f8bbd0;
+  color: white;
+  width: auto;
+  max-width: 250px;
+  margin: 0 auto;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for the button */
+.admin-dashboard .card-btn:hover {
+  background-color: #f9a7c4;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive styling for button */
+@media (max-width: 768px) {
+  .admin-dashboard .card-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .admin-dashboard .card {
+    max-width: 100%;
+  }
+  .admin-dashboard .cards-body {
+    justify-content: space-around;
+  }
+}
+
+/* admin card list */
+
+/* Target only the cake cards on this page */
+.admin-item-page .card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.admin-item-page .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for card image */
+.admin-item-page .card-img-top {
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 25rem;
+}
+
+/* Styling for card body */
+.admin-item-page .card-body {
+  padding: 1.5rem;
+}
+
+.admin-item-page .card-text.cake-name {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.admin-item-page .card-text.cake-name b {
+  font-size: 1.4rem; /* Larger font size for cake name */
+}
+
+.admin-item-page .card-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+  background-color: #f8bbd0;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.admin-item-page .card-btn:hover {
+  background-color: #f9a7c4;
+  transform: translateY(-3px);
+}
+
+/* Style for buttons container */
+.admin-item-page .abtns {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.admin-item-page .abtns a,
+.admin-item-page .abtns button {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.admin-item-page .card-img-overlay {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* Ensure the layout is responsive */
+@media (max-width: 1200px) {
+  .admin-item-page .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-item-page .card-img-top {
+    height: 20rem;
+  }
+
+  .admin-item-page .card-text.cake-name {
+    font-size: 1rem;
+  }
 }

@@ -4,72 +4,90 @@ const sampleMacarons = [
     price: 190,
     flavor: "Vanilla",
     filling: "Vanilla buttercream",
-    image:
-      "https://i.pinimg.com/236x/c0/b4/2e/c0b42e7022e197b301f12277923ad1de.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/c0/b4/2e/c0b42e7022e197b301f12277923ad1de.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Raspberry Delight",
     price: 210,
     flavor: "Raspberry",
     filling: "Raspberry jam and white chocolate ganache",
-    image:
-      "https://i.pinimg.com/236x/89/2f/32/892f32e13e3f0dd951bc09c335b0b951.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/89/2f/32/892f32e13e3f0dd951bc09c335b0b951.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Chocolate Dream",
     price: 250,
     flavor: "Chocolate",
     filling: "Dark chocolate ganache",
-    image:
-      "https://i.pinimg.com/236x/58/23/d4/5823d444cdf073347ca2f07e064986dc.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/58/23/d4/5823d444cdf073347ca2f07e064986dc.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Lemon Zest",
     price: 150,
     flavor: "Lemon",
     filling: "Lemon curd",
-    image:
-      "https://i.pinimg.com/236x/4c/23/f8/4c23f858c799596ab0b3c493375188e0.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4c/23/f8/4c23f858c799596ab0b3c493375188e0.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Salted Caramel",
     price: 200,
     flavor: "Caramel",
     filling: "Salted caramel buttercream",
-    image:
-      "https://i.pinimg.com/236x/d4/62/4e/d4624ec2eba3686d3c8c711b672d0c04.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/d4/62/4e/d4624ec2eba3686d3c8c711b672d0c04.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Pistachio Passion",
     price: 230,
     flavor: "Pistachio",
     filling: "Pistachio cream",
-    image:
-      "https://i.pinimg.com/236x/4a/e1/fc/4ae1fc11395764719896dab443fbce02.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4a/e1/fc/4ae1fc11395764719896dab443fbce02.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Strawberry Bliss",
     price: 270,
     flavor: "Strawberry",
     filling: "Strawberry preserves and whipped cream",
-    image:
-      "https://i.pinimg.com/236x/81/ea/10/81ea10d5a344fadb63976e1f0d5783fa.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/81/ea/10/81ea10d5a344fadb63976e1f0d5783fa.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Hazelnut Heaven",
     price: 270,
     flavor: "Hazelnut",
     filling: "Hazelnut praline",
-    image:
-      "https://i.pinimg.com/236x/7f/5f/fd/7f5ffd1df190e94a9179a4260b220c58.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/7f/5f/fd/7f5ffd1df190e94a9179a4260b220c58.jpg",
+      filename: "macaronimage",
+    },
   },
   {
     name: "Blueberry Burst",
     price: 210,
     flavor: "Blueberry",
     filling: "Blueberry compote and cream cheese filling",
-    image:
-      "https://i.pinimg.com/236x/68/40/a8/6840a8ef15e275a64c518284a2ea0526.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/68/40/a8/6840a8ef15e275a64c518284a2ea0526.jpg",
+      filename: "macaronimage",
+    },
   },
   //{
   // name: "Coconut Crush",

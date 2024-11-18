@@ -15,6 +15,9 @@ module.exports.sentForm = async (req, res) => {
 };
 
 module.exports.addItem = async (req, res) => {
+  let url = req.file.path;
+  let filename = req.file.filename;
+  // console.log(url, "....", filename);
   const {
     type,
     name,
@@ -31,7 +34,7 @@ module.exports.addItem = async (req, res) => {
     piping_color,
     msg_color,
     cake_toppings,
-    // filling,
+    //   // filling,
     quantity,
 
     croissant_toppings,
@@ -58,13 +61,15 @@ module.exports.addItem = async (req, res) => {
       msg_color,
       image,
     });
-
+    newCake.image = { url, filename };
     await newCake.save();
   } else if (type == "bread") {
     const newBread = new Bread({ name, price, slice_count, image });
+    newBread.image = { url, filename };
     await newBread.save();
   } else if (type == "cookie") {
     const newCookie = new Cookie({ name, price, image });
+    newCookie.image = { url, filename };
     await newCookie.save();
   } else if (type == "croissant") {
     const newCroissant = new Croissant({
@@ -75,6 +80,8 @@ module.exports.addItem = async (req, res) => {
       quantity,
       image,
     });
+    newCroissant.image = { url, filename };
+    newCroissant.image = { url, filename };
     await newCroissant.save();
   } else if (type == "donut") {
     const newDonut = new Donut({
@@ -85,6 +92,7 @@ module.exports.addItem = async (req, res) => {
       flavor: donut_flavour,
       image,
     });
+    newDonut.image = { url, filename };
     await newDonut.save();
   } else if (type == "macaron") {
     const newMacaron = new Macaron({
@@ -94,6 +102,7 @@ module.exports.addItem = async (req, res) => {
       filling: macaron_filling,
       image,
     });
+    newMacaron.image = { url, filename };
     await newMacaron.save();
   } else {
     req.flash("error", "Server error");
@@ -114,7 +123,9 @@ module.exports.cakeList = async (req, res) => {
 module.exports.cakeEdit = async (req, res) => {
   let { id } = req.params;
   const cake = await Cake.findById(id);
-  res.render("./admin/cakeEdit.ejs", { cake });
+  let originalImg = cake.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/cakeEdit.ejs", { cake, originalImg });
   // res.send("Success");
 };
 
@@ -122,7 +133,12 @@ module.exports.editCake = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let cake = await Cake.findByIdAndUpdate(id, updatedData);
-  await cake.save();
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    cake.image = { url, filename };
+    await cake.save();
+  }
 
   req.flash("success", "Edited successfully");
   res.redirect("/cakelist");
@@ -146,7 +162,10 @@ module.exports.cookieList = async (req, res) => {
 module.exports.cookieEdit = async (req, res) => {
   let { id } = req.params;
   const cookie = await Cookie.findById(id);
-  res.render("./admin/cookieEdit.ejs", { cookie });
+
+  let originalImg = cookie.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/cookieEdit.ejs", { cookie, originalImg });
   // res.send("Success");
 };
 
@@ -154,7 +173,12 @@ module.exports.editCookie = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let cookie = await Cookie.findByIdAndUpdate(id, updatedData);
-  await cookie.save();
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    cookie.image = { url, filename };
+    await cookie.save();
+  }
 
   req.flash("success", "Edited successfully");
   res.redirect("/cookielist");
@@ -178,7 +202,9 @@ module.exports.croissantList = async (req, res) => {
 module.exports.croissantEdit = async (req, res) => {
   let { id } = req.params;
   const croissant = await Croissant.findById(id);
-  res.render("./admin/croissantEdit.ejs", { croissant });
+  let originalImg = croissant.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/croissantEdit.ejs", { croissant, originalImg });
   // res.send("Success");
 };
 
@@ -186,7 +212,12 @@ module.exports.editCroissant = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let croissant = await Croissant.findByIdAndUpdate(id, updatedData);
-  await croissant.save();
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    croissant.image = { url, filename };
+    await croissant.save();
+  }
 
   req.flash("success", "Edited successfully");
   res.redirect("/croissantlist");
@@ -210,7 +241,9 @@ module.exports.donutList = async (req, res) => {
 module.exports.donutEdit = async (req, res) => {
   let { id } = req.params;
   const donut = await Donut.findById(id);
-  res.render("./admin/donutEdit.ejs", { donut });
+  let originalImg = donut.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/donutEdit.ejs", { donut, originalImg });
   // res.send("Success");
 };
 
@@ -218,7 +251,12 @@ module.exports.editDonut = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let donut = await Donut.findByIdAndUpdate(id, updatedData);
-  await donut.save();
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    donut.image = { url, filename };
+    await donut.save();
+  }
 
   req.flash("success", "Edited successfully");
   res.redirect("/donutlist");
@@ -242,7 +280,9 @@ module.exports.macaronList = async (req, res) => {
 module.exports.macaronEdit = async (req, res) => {
   let { id } = req.params;
   const macaron = await Macaron.findById(id);
-  res.render("./admin/macaronEdit.ejs", { macaron });
+  let originalImg = macaron.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/macaronEdit.ejs", { macaron, originalImg });
   // res.send("Success");
 };
 
@@ -250,7 +290,12 @@ module.exports.editMacaron = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let macaron = await Macaron.findByIdAndUpdate(id, updatedData);
-  await macaron.save();
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    macaron.image = { url, filename };
+    await macaron.save();
+  }
 
   req.flash("success", "Edited successfully");
   res.redirect("/macaronlist");
@@ -274,7 +319,9 @@ module.exports.breadList = async (req, res) => {
 module.exports.breadEdit = async (req, res) => {
   let { id } = req.params;
   const bread = await Bread.findById(id);
-  res.render("./admin/breadEdit.ejs", { bread });
+  let originalImg = bread.image.url;
+  originalImg = originalImg.replace("/upload", "/upload/h_300,w_250");
+  res.render("./admin/breadEdit.ejs", { bread, originalImg });
   // res.send("Success");
 };
 
@@ -282,8 +329,12 @@ module.exports.editBread = async (req, res) => {
   let { id } = req.params;
   const updatedData = req.body;
   let bread = await Bread.findByIdAndUpdate(id, updatedData);
-  await bread.save();
-
+  if (typeof req.file != "undefined") {
+    let url = req.file.path;
+    let filename = req.file.filename;
+    bread.image = { url, filename };
+    await bread.save();
+  }
   req.flash("success", "Edited successfully");
   res.redirect("/breadlist");
 };

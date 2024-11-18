@@ -4,7 +4,13 @@
   <div class="col-8 offset-2">
     <h3>Add new item</h3>
     <!-- Form starts here -->
-    <form method="POST" action="/add" novalidate class="needs-validation">
+    <form
+      method="POST"
+      action="/add"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
       <label for="type">Select Item Type:</label>
       <select id="type" name="type" onchange="showFields(this.value)">
         <option value="">--Select--</option>
@@ -40,7 +46,7 @@
         </div>
       </div>
 
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="image" class="form-label">Image Link</label>
         <input
           name="image"
@@ -48,6 +54,11 @@
           type="text"
           class="form-control"
         />
+      </div> -->
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input name="image" type="file" class="form-control" />
       </div>
 
       <!-- Cake-specific fields -->

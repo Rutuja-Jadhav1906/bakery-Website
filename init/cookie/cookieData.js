@@ -2,62 +2,82 @@ const sampleCookies = [
   {
     name: "Chocolate Chip Cookie",
     price: 150,
-    image:
-      "https://i.pinimg.com/236x/8a/bb/dc/8abbdc650c3cd73d662497e4af11f70f.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/8a/bb/dc/8abbdc650c3cd73d662497e4af11f70f.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Oatmeal Raisin Cookie",
     price: 120,
-    image:
-      "https://i.pinimg.com/236x/62/b1/fb/62b1fbf498f37ccdf41d3f0568391fb7.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/62/b1/fb/62b1fbf498f37ccdf41d3f0568391fb7.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Peanut Butter Cookie",
     price: 130,
-    image:
-      "https://i.pinimg.com/236x/9d/01/45/9d014518182ebabf8eda80e8db71cba6.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/9d/01/45/9d014518182ebabf8eda80e8db71cba6.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Snickerdoodle Cookie",
     price: 100,
-    image:
-      "https://i.pinimg.com/736x/04/f2/28/04f22802fa81178fa39759e4541b8d19.jpg",
+    image: {
+      url: "https://i.pinimg.com/736x/04/f2/28/04f22802fa81178fa39759e4541b8d19.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Double Chocolate Cookie",
     price: 100,
-    image:
-      "https://i.pinimg.com/236x/d5/79/06/d579060cbdc7dabfccec87ae0c0cdeed.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/d5/79/06/d579060cbdc7dabfccec87ae0c0cdeed.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Sugar Cookie",
     price: 100,
-    image:
-      "https://i.pinimg.com/236x/7d/d9/63/7dd963bd5965e5b4481f3840bec85205.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/7d/d9/63/7dd963bd5965e5b4481f3840bec85205.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "White Chocolate Macadamia Nut Cookie",
     price: 160,
-    image:
-      "https://i.pinimg.com/474x/f2/b4/86/f2b4862c36562728c7b7d096db27fa73.jpg",
+    image: {
+      url: "https://i.pinimg.com/474x/f2/b4/86/f2b4862c36562728c7b7d096db27fa73.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Gingerbread Cookie",
     price: 120,
-    image:
-      "https://i.pinimg.com/236x/54/7d/77/547d772d2efc47a42f5ae8b9f8760262.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/54/7d/77/547d772d2efc47a42f5ae8b9f8760262.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Almond Shortbread Cookie",
     price: 150,
-    image:
-      "https://i.pinimg.com/236x/4c/ab/cc/4cabccb2ca39bc2ad98d8bf0459b5988.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4c/ab/cc/4cabccb2ca39bc2ad98d8bf0459b5988.jpg",
+      filename: "cookieimage",
+    },
   },
   {
     name: "Lemon Glazed Cookie",
     price: 130,
-    image:
-      "https://i.pinimg.com/236x/b2/d8/b9/b2d8b970e7c69e62f9637830863ba9d3.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/b2/d8/b9/b2d8b970e7c69e62f9637830863ba9d3.jpg",
+      filename: "cookieimage",
+    },
   },
   // {
   //     name: "Snickerdoodle Cookie",

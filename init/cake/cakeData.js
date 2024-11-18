@@ -11,8 +11,10 @@ const sampleProducts = [
     cake_color: "Deep brown",
     piping_color: "White",
     msg_color: "Gold",
-    image:
-      "https://i.pinimg.com/564x/bb/7e/15/bb7e15a2f55b6857fe94cd8ff4afaaee.jpg",
+    image: {
+      url: "https://i.pinimg.com/564x/bb/7e/15/bb7e15a2f55b6857fe94cd8ff4afaaee.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Vanilla Bean Cake",
@@ -26,8 +28,10 @@ const sampleProducts = [
     cake_color: "Creamy white",
     piping_color: "Light yellow",
     msg_color: "Blue",
-    image:
-      "https://i.pinimg.com/236x/a4/e2/fb/a4e2fb9e303533b0a21454c0ef2e5a4d.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/a4/e2/fb/a4e2fb9e303533b0a21454c0ef2e5a4d.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Red Velvet Cake",
@@ -41,8 +45,10 @@ const sampleProducts = [
     cake_color: "Deep red",
     piping_color: "White",
     msg_color: "Red",
-    image:
-      "https://i.pinimg.com/236x/1e/5f/43/1e5f4354b2d14cfdd152bc0d3c3fe5c5.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/1e/5f/43/1e5f4354b2d14cfdd152bc0d3c3fe5c5.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Lemon Drizzle Cake",
@@ -56,8 +62,10 @@ const sampleProducts = [
     cake_color: "Yellow",
     piping_color: "Light green",
     msg_color: "Yellow",
-    image:
-      "https://i.pinimg.com/236x/c2/5b/8e/c25b8e78762973a8cb88eedae69f5abb.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/c2/5b/8e/c25b8e78762973a8cb88eedae69f5abb.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Carrot Walnut Cake",
@@ -71,8 +79,10 @@ const sampleProducts = [
     cake_color: "Orange",
     piping_color: "Cream",
     msg_color: "Orange",
-    image:
-      "https://i.pinimg.com/236x/65/b3/f4/65b3f4a2651da2b54834664a9e220357.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/65/b3/f4/65b3f4a2651da2b54834664a9e220357.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Strawberry Shortcake",
@@ -86,8 +96,10 @@ const sampleProducts = [
     cake_color: "Light pink",
     piping_color: "White",
     msg_color: "Pink",
-    image:
-      "https://i.pinimg.com/236x/9c/6a/d1/9c6ad116b972dfd327c5c499335a09cf.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/9c/6a/d1/9c6ad116b972dfd327c5c499335a09cf.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Black Forest Cake",
@@ -101,8 +113,10 @@ const sampleProducts = [
     cake_color: "Dark brown",
     piping_color: "White",
     msg_color: "Red",
-    image:
-      "https://i.pinimg.com/236x/41/f0/aa/41f0aac4ebe0bb50a353f686d28dcbc4.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/41/f0/aa/41f0aac4ebe0bb50a353f686d28dcbc4.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Coconut Pineapple Cake",
@@ -116,8 +130,10 @@ const sampleProducts = [
     cake_color: "White",
     piping_color: "Light blue",
     msg_color: "Yellow",
-    image:
-      "https://i.pinimg.com/236x/4a/1b/c4/4a1bc42ea34fabad68c77529e88c7c00.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4a/1b/c4/4a1bc42ea34fabad68c77529e88c7c00.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Hazelnut Crunch Cake",
@@ -131,8 +147,10 @@ const sampleProducts = [
     cake_color: "Brown",
     piping_color: "Gold",
     msg_color: "Brown",
-    image:
-      "https://i.pinimg.com/236x/6f/57/93/6f57936bb2cfa41a84d95e326e20911c.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/6f/57/93/6f57936bb2cfa41a84d95e326e20911c.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Marble Swirl Cheesecake",
@@ -146,8 +164,10 @@ const sampleProducts = [
     cake_color: "Marble pattern",
     piping_color: "White",
     msg_color: "Silver",
-    image:
-      "https://i.pinimg.com/236x/6e/e6/01/6ee6017044856361da33435badbc4747.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/6e/e6/01/6ee6017044856361da33435badbc4747.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Mocha Espresso Cake",
@@ -161,8 +181,10 @@ const sampleProducts = [
     cake_color: "Dark brown",
     piping_color: "Cream",
     msg_color: "Brown",
-    image:
-      "https://i.pinimg.com/236x/18/55/29/18552916fd67d7ef971bf6b570259baa.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/18/55/29/18552916fd67d7ef971bf6b570259baa.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Caramel Apple Spice Cake",
@@ -176,8 +198,10 @@ const sampleProducts = [
     cake_color: "Light brown with apple chunks",
     piping_color: "Caramel",
     msg_color: "Green",
-    image:
-      "https://i.pinimg.com/236x/32/18/78/321878d9ae4967eb0b88fd35a794ea03.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/32/18/78/321878d9ae4967eb0b88fd35a794ea03.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Almond Raspberry Cake",
@@ -191,8 +215,10 @@ const sampleProducts = [
     cake_color: "Light pink with almond flakes",
     piping_color: "White",
     msg_color: "Red",
-    image:
-      "https://i.pinimg.com/236x/f6/df/63/f6df63a8025de66ef633efc35b1e5d15.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/f6/df/63/f6df63a8025de66ef633efc35b1e5d15.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Cookies and Cream Cake",
@@ -206,8 +232,10 @@ const sampleProducts = [
     cake_color: "White with black cookie crumbs",
     piping_color: "Black",
     msg_color: "White",
-    image:
-      "https://i.pinimg.com/236x/62/6d/3b/626d3b65aa64ddd6f534565f46f612e8.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/62/6d/3b/626d3b65aa64ddd6f534565f46f612e8.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Pistachio Rose Cake",
@@ -221,8 +249,10 @@ const sampleProducts = [
     cake_color: "Light green with pink rose swirls",
     piping_color: "Pink",
     msg_color: "Green",
-    image:
-      "https://i.pinimg.com/236x/82/99/e9/8299e9de9c2d3db1fdf0e7e3f4fb1053.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/82/99/e9/8299e9de9c2d3db1fdf0e7e3f4fb1053.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Cherry Chocolate Chip Cake",
@@ -236,8 +266,10 @@ const sampleProducts = [
     cake_color: "Dark brown with red cherries",
     piping_color: "Red",
     msg_color: "White",
-    image:
-      "https://i.pinimg.com/236x/f5/e5/fb/f5e5fb1f46d56a7656ae951a0a29dacd.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/f5/e5/fb/f5e5fb1f46d56a7656ae951a0a29dacd.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Lavender Honey Cake",
@@ -251,8 +283,10 @@ const sampleProducts = [
     cake_color: "Light purple with golden honey swirls",
     piping_color: "Gold",
     msg_color: "Purple",
-    image:
-      "https://i.pinimg.com/236x/d7/b5/8d/d7b58d2ef8ab663bc1b451fc24d4c097.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/d7/b5/8d/d7b58d2ef8ab663bc1b451fc24d4c097.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Salted Caramel Chocolate Cake",
@@ -266,8 +300,10 @@ const sampleProducts = [
     cake_color: "Dark brown with caramel swirls",
     piping_color: "Caramel",
     msg_color: "White",
-    image:
-      "https://i.pinimg.com/236x/a6/25/f6/a625f631047521dfff2f4d02c5d55d44.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/a6/25/f6/a625f631047521dfff2f4d02c5d55d44.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Matcha Green Tea Cake",
@@ -281,8 +317,10 @@ const sampleProducts = [
     cake_color: "Green",
     piping_color: "White",
     msg_color: "Green",
-    image:
-      "https://i.pinimg.com/236x/45/42/e1/4542e1e0ef68a732079842b1516603cd.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/45/42/e1/4542e1e0ef68a732079842b1516603cd.jpg",
+      filename: "cakeimage",
+    },
   },
   {
     name: "Orange Creamsicle Cake",
@@ -296,8 +334,10 @@ const sampleProducts = [
     cake_color: "Orange and white swirls",
     piping_color: "Orange",
     msg_color: "White",
-    image:
-      "https://i.pinimg.com/236x/de/a0/96/dea0960d295b4919815f720452195d61.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/de/a0/96/dea0960d295b4919815f720452195d61.jpg",
+      filename: "cakeimage",
+    },
   },
 ];
 

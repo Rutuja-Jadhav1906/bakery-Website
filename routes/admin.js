@@ -1,12 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/admin.js");
+const multer = require("multer");
+
+const { storage } = require("../cloudconfig.js");
+
+const upload = multer({ storage });
 
 router.get("/admin", adminController.dashboard);
 
 router.get("/form", adminController.sentForm);
 
-router.post("/add", adminController.addItem);
+router.post("/add", upload.single("image"), adminController.addItem);
 
 // CAKE ROUTES
 
@@ -16,7 +21,7 @@ router.get("/cakes/:id/edit", adminController.cakeEdit);
 
 router.delete("/cakes/:id", adminController.deleteCake);
 
-router.put("/cakes/:id", adminController.editCake);
+router.put("/cakes/:id", upload.single("image"), adminController.editCake);
 
 // COOKIE ROUTES
 
@@ -26,7 +31,7 @@ router.get("/cookies/:id/edit", adminController.cookieEdit);
 
 router.delete("/cookies/:id", adminController.deleteCookie);
 
-router.put("/cookies/:id", adminController.editCookie);
+router.put("/cookies/:id", upload.single("image"), adminController.editCookie);
 
 // CROISSANT ROUTES
 
@@ -36,7 +41,11 @@ router.get("/croissants/:id/edit", adminController.croissantEdit);
 
 router.delete("/croissants/:id", adminController.deleteCroissant);
 
-router.put("/croissants/:id", adminController.editCroissant);
+router.put(
+  "/croissants/:id",
+  upload.single("image"),
+  adminController.editCroissant
+);
 
 // DONUTS ROUTES
 
@@ -46,7 +55,7 @@ router.get("/donuts/:id/edit", adminController.donutEdit);
 
 router.delete("/donuts/:id", adminController.deleteDonut);
 
-router.put("/donuts/:id", adminController.editDonut);
+router.put("/donuts/:id", upload.single("image"), adminController.editDonut);
 
 // MACARON ROUTES
 
@@ -56,7 +65,11 @@ router.get("/macarons/:id/edit", adminController.macaronEdit);
 
 router.delete("/macarons/:id", adminController.deleteMacaron);
 
-router.put("/macarons/:id", adminController.editMacaron);
+router.put(
+  "/macarons/:id",
+  upload.single("image"),
+  adminController.editMacaron
+);
 
 // BREAD ROUTES
 
@@ -66,6 +79,6 @@ router.get("/breads/:id/edit", adminController.breadEdit);
 
 router.delete("/breads/:id", adminController.deleteBread);
 
-router.put("/breads/:id", adminController.editBread);
+router.put("/breads/:id", upload.single("image"), adminController.editBread);
 
 module.exports = router;

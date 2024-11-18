@@ -4,64 +4,80 @@ const sampleCroissants = [
     filling: "None",
     toppings: "None",
     price: 50,
-    image:
-      "https://i.pinimg.com/236x/e0/6b/a8/e06ba8c8b8fd2123b856a3a843fa03ef.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/e0/6b/a8/e06ba8c8b8fd2123b856a3a843fa03ef.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Chocolate Croissant",
     filling: "Chocolate",
     toppings: "Powdered Sugar",
     price: 70,
-    image:
-      "https://i.pinimg.com/236x/13/96/9e/13969e3c3076b87709994a8205439905.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/13/96/9e/13969e3c3076b87709994a8205439905.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Almond Croissant",
     filling: "Almond Paste",
     toppings: "Sliced Almonds",
     price: 80,
-    image:
-      "https://i.pinimg.com/236x/56/95/14/5695149f812500571c098a417906a7e3.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/56/95/14/5695149f812500571c098a417906a7e3.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Blueberry Cream Cheese Croissant",
     filling: "Blueberry Cream Cheese",
     toppings: "Blueberry Glaze",
     price: 85,
-    image:
-      "https://i.pinimg.com/236x/74/e8/2a/74e82a58f18df6b3e2aa2423489b2ee1.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/74/e8/2a/74e82a58f18df6b3e2aa2423489b2ee1.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Raspberry Jam Croissant",
     filling: "Raspberry Jam",
     toppings: "Powdered Sugar",
     price: 70,
-    image:
-      "https://i.pinimg.com/236x/cc/e4/7b/cce47b6ac9f2eaa7d82052574df3f22b.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/cc/e4/7b/cce47b6ac9f2eaa7d82052574df3f22b.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Spinach and Feta Croissant",
     filling: "Spinach and Feta Cheese",
     toppings: "Sesame Seeds",
     price: 85,
-    image:
-      "https://i.pinimg.com/236x/75/1b/50/751b504ad93f63f76684012da8d9b31a.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/75/1b/50/751b504ad93f63f76684012da8d9b31a.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Apple Cinnamon Croissant",
     filling: "Apple Cinnamon Compote",
     toppings: "Cinnamon Sugar",
     price: 80,
-    image:
-      "https://i.pinimg.com/236x/4e/2f/7c/4e2f7c0184586139a4268929736feaea.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4e/2f/7c/4e2f7c0184586139a4268929736feaea.jpg",
+      filename: "croimage",
+    },
   },
   {
     name: "Nutella Croissant",
     filling: "Nutella",
     toppings: "Chopped Hazelnuts",
     price: 85,
-    image:
-      "https://i.pinimg.com/236x/30/1e/28/301e283fe3c4b90375c42e776b4e5a04.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/30/1e/28/301e283fe3c4b90375c42e776b4e5a04.jpg",
+      filename: "croimage",
+    },
   },
 
   // {

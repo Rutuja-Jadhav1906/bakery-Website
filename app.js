@@ -1,9 +1,14 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -19,6 +24,7 @@ const donutRouter = require("./routes/donuts.js");
 const cartRouter = require("./routes/cart.js");
 const adminRouter = require("./routes/admin.js");
 const { isLoggedIn } = require("./middleware.js");
+
 const Razorpay = require("razorpay");
 const RAZORPAY_ID_KEY = "rzp_test_FW207lC8d9Vjrh";
 const RAZORPAY_SECRET_KEY = "QhlPMv0PMnMkA3YFlszyImZV";
@@ -29,6 +35,8 @@ const razorpayInstance = new Razorpay({
 
 const mongoose = require("mongoose");
 
+const dbUrl = process.env.ATLAS_DB_URL;
+
 main()
   .then(() => {
     console.log("connected to db");
@@ -36,7 +44,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/bakery");
+  await mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
@@ -46,7 +54,20 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: "mysupersecretcode",
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", () => {
+  console.log("Error in mongo session store");
+});
+
 const sessionOptions = {
+  store,
   secret: "mysupersecretcode",
   resave: false,
   saveUninitialized: true,

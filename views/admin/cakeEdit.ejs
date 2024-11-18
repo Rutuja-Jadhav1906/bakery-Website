@@ -9,6 +9,7 @@
       action="/cakes/<%= cake._id%>?_method=PUT"
       novalidate
       class="needs-validation"
+      enctype="multipart/form-data"
     >
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
@@ -35,13 +36,13 @@
       </div>
 
       <div class="mb-3">
+        Original Image<br />
+        <img src="<%=originalImg%>" />
+      </div>
+
+      <div class="mb-3">
         <label for="image" class="form-label">Image Link</label>
-        <input
-          name="image"
-          value="<%= cake.image%>"
-          type="text"
-          class="form-control"
-        />
+        <input name="image" type="file" class="form-control" />
       </div>
 
       <!-- Cake-specific fields -->

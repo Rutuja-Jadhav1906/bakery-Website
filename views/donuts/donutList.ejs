@@ -5,7 +5,11 @@
     <a href="/donuts/<%=donut._id %>" class="cards-link">
       <div class="card col item-card">
         <div class="card-image-wrapper">
-          <img src="<%= donut.image %>" class="card-img-top" alt="cake_image" />
+          <img
+            src="<%= donut.image.url %>"
+            class="card-img-top"
+            alt="cake_image"
+          />
           <div class="card-overlay">
             <h5 class="overlay-text"><%= donut.name %></h5>
             <p class="overlay-price">&#8377; <%= donut.price %></p>

@@ -5,8 +5,10 @@ const sampleDonuts = [
     filling: "None",
     topping: "Glaze",
     price: 30,
-    image:
-      "https://i.pinimg.com/236x/a3/38/90/a338902414641524c0899708b162f285.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/a3/38/90/a338902414641524c0899708b162f285.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Chocolate Frosted Donut",
@@ -14,8 +16,10 @@ const sampleDonuts = [
     filling: "None",
     topping: "Chocolate Frosting",
     price: 35,
-    image:
-      "https://i.pinimg.com/236x/92/8c/7f/928c7fa4e996e190e42412d34f80456f.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/92/8c/7f/928c7fa4e996e190e42412d34f80456f.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Boston Cream Donut",
@@ -23,8 +27,10 @@ const sampleDonuts = [
     filling: "Bavarian Cream",
     topping: "Chocolate Ganache",
     price: 30,
-    image:
-      "https://i.pinimg.com/236x/79/9e/49/799e494defb7f0e8a34fe8ab599b0c5f.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/79/9e/49/799e494defb7f0e8a34fe8ab599b0c5f.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Strawberry Jelly Donut",
@@ -32,8 +38,10 @@ const sampleDonuts = [
     filling: "Strawberry Jelly",
     topping: "Powdered Sugar",
     price: 25,
-    image:
-      "https://i.pinimg.com/236x/c7/10/32/c7103229b6d12e84754f9a017af2bf95.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/c7/10/32/c7103229b6d12e84754f9a017af2bf95.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Maple Bacon Donut",
@@ -41,8 +49,10 @@ const sampleDonuts = [
     filling: "None",
     topping: "Maple Glaze, Bacon Bits",
     price: 25,
-    image:
-      "https://i.pinimg.com/236x/4d/6c/3d/4d6c3d6d5bba69dab313c3f512d3e0ed.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/4d/6c/3d/4d6c3d6d5bba69dab313c3f512d3e0ed.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Blueberry Cake Donut",
@@ -50,8 +60,10 @@ const sampleDonuts = [
     filling: "None",
     topping: "None (Cake style)",
     price: 30,
-    image:
-      "https://i.pinimg.com/236x/50/c5/a5/50c5a52f35ff8ab9d10c84cf05bdeaee.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/50/c5/a5/50c5a52f35ff8ab9d10c84cf05bdeaee.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Cinnamon Sugar Twist Donut",
@@ -59,8 +71,10 @@ const sampleDonuts = [
     filling: "None",
     topping: "Cinnamon Sugar",
     price: 20,
-    image:
-      "https://i.pinimg.com/236x/f1/1f/ea/f11fea82ec346a6bef47282811833ad0.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/f1/1f/ea/f11fea82ec346a6bef47282811833ad0.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Peanut Butter Filled Donut",
@@ -68,8 +82,10 @@ const sampleDonuts = [
     filling: "Peanut Butter Cream",
     topping: "Chocolate Drizzle",
     price: 20,
-    image:
-      "https://i.pinimg.com/236x/eb/c4/04/ebc404e743558d7346ebfbbb76cf8198.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/eb/c4/04/ebc404e743558d7346ebfbbb76cf8198.jpg",
+      filename: "donutimage",
+    },
   },
   {
     name: "Lemon Cream Donut",
@@ -77,8 +93,10 @@ const sampleDonuts = [
     filling: "Lemon Cream",
     topping: "Lemon Glaze",
     price: 15,
-    image:
-      "https://i.pinimg.com/236x/d2/3f/79/d23f791dc857434df7c64ac4b33b977d.jpg",
+    image: {
+      url: "https://i.pinimg.com/236x/d2/3f/79/d23f791dc857434df7c64ac4b33b977d.jpg",
+      filename: "donutimage",
+    },
   },
   // {
   //     name:"Red Velvet Donut",

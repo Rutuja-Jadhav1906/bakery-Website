@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const flash = require("connect-flash");
 const Review = require("../models/review.js");
-const { isLoggedIn, isAuthor } = require("../middleware.js");
+const { isLoggedIn, isReviewAuthor } = require("../middleware.js");
 const Cart = require("../models/cart.js");
 const Bread = require("../models/bread.js");
 const breadController = require("../controllers/bread.js");
@@ -20,7 +20,7 @@ router.post("/:id/reviews", isLoggedIn, breadController.addReview);
 router.delete(
   "/:id/reviews/:reviewId",
   isLoggedIn,
-  isAuthor,
+  isReviewAuthor,
   breadController.deleteReview
 );
 

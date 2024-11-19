@@ -2,10 +2,14 @@
 <body>
   <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3 cards-body">
     <% for(let bread of allBreads){%>
-    <a href="/breads/<%=bread._id.url %>" class="cards-link">
+    <a href="/breads/<%=bread._id %>" class="cards-link">
       <div class="card col item-card">
         <div class="card-image-wrapper">
-          <img src="<%= bread.image %>" class="card-img-top" alt="cake_image" />
+          <img
+            src="<%= bread.image.url %>"
+            class="card-img-top"
+            alt="cake_image"
+          />
           <div class="card-overlay">
             <h5 class="overlay-text"><%= bread.name %></h5>
             <p class="overlay-price">&#8377; <%= bread.price %></p>

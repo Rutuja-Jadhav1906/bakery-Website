@@ -10,6 +10,7 @@
 .navbar {
   height: 4rem;
   background-color: #fce4ec;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-brand {
@@ -17,10 +18,11 @@
   font-weight: 500 !important;
   font-style: normal;
   font-size: 2.5rem !important;
+  color: #d54477 !important;
 }
 
 .nav-link {
-  color: #222222 !important;
+  color: #dc5786 !important;
   font-weight: 500 !important;
   font-size: 1.2rem !important;
 }
@@ -31,6 +33,27 @@
 
 .nav-options:hover {
   opacity: 1;
+}
+
+.dropdown-menu {
+  background-color: #fce4ec !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 2rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  .cart-link {
+    margin-left: 0;
+  }
 }
 
 /* cards */
@@ -90,7 +113,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: rgba(252, 228, 236, 0.5);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -983,4 +1007,169 @@ footer {
   .admin-item-page .card-text.cake-name {
     font-size: 1rem;
   }
+}
+
+/* RATING STYLING */
+
+/* Target only review cards inside the .review-container */
+.review-container .review-card {
+  background-color: #fff0f5;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.review-container .review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-container .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.review-container .review-username {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.review-container .review-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.review-container .star-filled {
+  color: #ffcc00;
+}
+
+.review-container .star-empty {
+  color: #ccc;
+}
+
+.review-container .review-comment {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.review-container .delete-form {
+  text-align: right;
+}
+
+.review-container .delete-form button {
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+}
+
+/* Flexbox container for reviews */
+.review-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Gap between cards */
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Cards should be 48% of the row's width, leaving some space for gaps */
+.review-container .col-lg-6 {
+  flex: 1 1 calc(50% - 20px); /* Two cards per row */
+  max-width: 50%;
+}
+
+.review-container .col-md-6 {
+  flex: 1 1 calc(50% - 20px); /* Two cards per row on medium screens */
+  max-width: 50%;
+}
+
+.review-container .col-sm-12 {
+  flex: 1 1 100%; /* One card per row on small screens */
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .review-container .col-lg-6 {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .review-container .col-md-6,
+  .review-container .col-lg-6 {
+    flex: 1 1 100%; /* One card per row on smaller screens */
+    max-width: 100%;
+  }
+}
+
+/* REVIEW FORM STYLING */
+
+/* Styling for the review form */
+.review-form-container {
+  background: #fce4ec;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Restrict width */
+  margin: 20px auto;
+}
+
+.review-form-container h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #d14f94;
+}
+
+.review-form .form-group {
+  margin-bottom: 20px;
+}
+
+.review-form .form-label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #4a4a4a;
+}
+
+.review-form textarea.form-control {
+  width: 100%; /* Keep textarea within container */
+  resize: none; /* Disable resizing */
+  padding: 10px;
+  border: 1px solid #d1c4e9;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.review-form textarea.form-control:focus {
+  outline: none;
+  border-color: #7b1fa2;
+}
+
+.review-form .submit-btn {
+  padding: 0.8rem 2rem;
+  background-color: #f9a4c2;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.review-form .submit-btn:hover {
+  background-color: #f9a4c2;
+  transform: scale(1.05);
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Cookie = require("../models/cookie.js");
 const Review = require("../models/review.js");
-const { isLoggedIn, isAuthor } = require("../middleware.js");
+const { isLoggedIn, isReviewAuthor } = require("../middleware.js");
 const Cart = require("../models/cart.js");
 const cookieController = require("../controllers/cookie.js");
 
@@ -19,7 +19,7 @@ router.post("/:id/reviews", isLoggedIn, cookieController.cookieReview);
 router.delete(
   "/:id/reviews/:reviewId",
   isLoggedIn,
-  isAuthor,
+  isReviewAuthor,
   cookieController.deleteReview
 );
 module.exports = router;

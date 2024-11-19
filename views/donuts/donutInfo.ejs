@@ -18,7 +18,7 @@
           <h6 class="card-text"><b>Filling:</b> <%= donut.filling%></h6>
           <h6 class="card-text"><b>Topping:</b> <%= donut.topping%></h6>
           <form method="get" action="/donuts/<%= donut._id%>/addtocart">
-            <%- include("../includes/addtocart.ejs") %>
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
           </form>
           <!-- <h6 class="card-text"><small class="text-body-secondary">Last uh6dated 3 mins ago</small></h6> -->
         </div>
@@ -27,17 +27,17 @@
   </div>
   <!-- Review -->
   <% if(currUser){%>
-  <div class="offset-1">
-    <h4>Tell Us About Your Expreience</h4>
-    <form action="/donuts/<%= donut._id%>/reviews" method="POST">
-      <!-- <div class="mb-3 mt-3">
-              <label for="rating" class="form-label">Rating</label>
-              <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range">
-            </div> -->
-      <div class="mb-3 mt-3">
+  <div class="offset-1 review-form-container">
+    <h4>Tell Us About Your Experience</h4>
+    <form
+      action="/donuts/<%= donut._id%>/reviews"
+      method="POST"
+      class="review-form"
+    >
+      <!-- Rating Section -->
+      <div class="form-group">
         <label for="rating" class="form-label">Rating</label>
         <fieldset class="starability-basic">
-          <!-- <legend>First rating:</legend> -->
           <input
             type="radio"
             id="no-rate"
@@ -84,40 +84,50 @@
           <label for="first-rate5" title="Amazing">5 stars</label>
         </fieldset>
       </div>
-      <div class="mb-3 mt-3">
+
+      <!-- Comments Section -->
+      <div class="form-group">
         <label for="comment" class="form-label">Comments</label>
         <textarea
           name="review[comment]"
           id="comment"
-          cols="30"
-          rows="5"
           class="form-control"
+          rows="5"
+          placeholder="Share your thoughts..."
         ></textarea>
       </div>
-      <button class="btn btn-outline-dark">Submit</button>
+
+      <!-- Submit Button -->
+      <button class="btn btn-outline-dark submit-btn">Submit</button>
     </form>
   </div>
+
   <%}%>
   <h5 class="offset-1 mt-3"><b>Thanks Alot</b></h5>
-  <div class="offset-1">
-    <% for(review of donut.review){%>
-    <div class="card col-4 mb-3" style="padding: 10px">
-      <div class="card-body">
-        <h5 class="card-title">@<%= review.author.username%></h5>
-        <p class="card-text"><%= review.comment%></p>
-        <p
-          class="starability-result card-text"
-          data-rating="<%= review.rating%>"
-        ></p>
+  <div class="offset-1 review-container">
+    <% for (review of donut.review) { %>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="review-card shadow-sm">
+        <div class="review-header">
+          <h5 class="review-username">@<%= review.author.username %></h5>
+          <div class="review-rating">
+            <% for (let i = 1; i <= 5; i++) { %> <% if (i <= review.rating) { %>
+            <i class="fa-solid fa-star star-filled"></i>
+            <% } else { %>
+            <i class="fa-regular fa-star star-empty"></i>
+            <% } %> <% } %>
+          </div>
+        </div>
+        <p class="review-comment"><%= review.comment %></p>
+        <form
+          class="delete-form"
+          method="POST"
+          action="/donuts/<%= donut._id %>/reviews/<%= review._id %>?_method=DELETE"
+        >
+          <button class="btn btn-outline-dark btn-sm">Delete</button>
+        </form>
       </div>
-      <form
-        class="mt-2"
-        method="POST"
-        action="/donuts/<%=donut._id%>/reviews/<%=review._id%>?_method=DELETE"
-      >
-        <button class="btn btn-sm btn-dark">Delete</button>
-      </form>
     </div>
-    <%}%>
+    <% } %>
   </div>
 </body>

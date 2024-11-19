@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { isLoggedIn, isAuthor } = require("../middleware.js");
+const { isLoggedIn, isReviewAuthor } = require("../middleware.js");
 const macaronController = require("../controllers/macaron.js");
 
 router.get("/", macaronController.index);
@@ -16,7 +16,7 @@ router.post("/:id/reviews", isLoggedIn, macaronController.addReview);
 router.delete(
   "/:id/reviews/:reviewId",
   isLoggedIn,
-  isAuthor,
+  isReviewAuthor,
   macaronController.deleteReview
 );
 

@@ -156,7 +156,7 @@ app.get("/nav", (req, res) => {
   res.render("./includes/navbar.ejs", { currUser });
 });
 
-app.get("/home", async (req, res) => {
+app.get("/", async (req, res) => {
   // console.log(req.user);
   res.render("home2.ejs");
 });

@@ -26,7 +26,7 @@ module.exports.addToCart = async (req, res) => {
 
     if (!product) {
       req.flash("error", "Product not found");
-      return res.redirect("/home"); // Redirect to homepage or any other page
+      return res.redirect("/"); // Redirect to homepage or any other page
     }
 
     // Access the signed-in user's ID from req.user
@@ -45,10 +45,10 @@ module.exports.addToCart = async (req, res) => {
     await newCartItem.save();
 
     req.flash("success", "Item added to cart successfully");
-    res.redirect("/home"); // Redirect to homepage or any other page
+    res.redirect("/"); // Redirect to homepage or any other page
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/home"); // Redirect back to the homepage
+    res.redirect("/"); // Redirect back to the homepage
   }
 };
 

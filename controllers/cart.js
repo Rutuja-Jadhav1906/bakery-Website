@@ -9,7 +9,7 @@ module.exports.showCart = async (req, res) => {
     res.render("./cart/cartList.ejs", { allOrders });
   } catch (err) {
     req.flash("error", "Cart is Empty,Please Log-in");
-    res.redirect("/home");
+    res.redirect("/");
   }
 };
 

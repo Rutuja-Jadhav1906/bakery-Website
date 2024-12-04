@@ -148,7 +148,7 @@ app.post("/pay", (req, res) => {
 
 app.get("/final", (req, res) => {
   req.flash("success", "Order Paced");
-  res.redirect("/home");
+  res.redirect("/");
 });
 
 app.get("/nav", (req, res) => {
@@ -192,13 +192,13 @@ app.post("/payment", (req, res) => {
 
 app.get("/success", (req, res) => {
   req.flash("success", "Payment successful");
-  res.redirect("/home");
+  res.redirect("/");
 });
 
 app.post("/payment/success", (req, res) => {
   // Handle successful payment
   req.flash("success", "Payment successful!");
-  res.redirect("/home");
+  res.redirect("/");
 });
 
 app.get("/hello", (req, res) => {

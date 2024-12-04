@@ -39,7 +39,7 @@ module.exports.loginForm = (req, res) => {
 
 module.exports.login = async (req, res) => {
   req.flash("success", "Welcome , you are logged in");
-  res.redirect("/home");
+  res.redirect("/");
 };
 
 module.exports.logout = (req, res, next) => {
@@ -48,7 +48,7 @@ module.exports.logout = (req, res, next) => {
       return next(err);
     }
     req.flash("success", "you are logged out");
-    res.redirect("/home");
+    res.redirect("/");
   });
 };
 
@@ -62,5 +62,5 @@ module.exports.feedback = async (req, res) => {
   await newFeedback.save();
   console.log("New Feedback saved");
   req.flash("success", "feedback saved");
-  res.redirect("/home");
+  res.redirect("/");
 };
